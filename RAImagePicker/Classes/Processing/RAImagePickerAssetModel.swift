@@ -27,7 +27,7 @@ final class RAImagePickerAssetModel {
         
         let assetsOptions = PHFetchOptions()
         assetsOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        assetsOptions.fetchLimit = 1000
+        assetsOptions.fetchLimit = 10
         
         let collections = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
         if let cameraRoll = collections.firstObject {
