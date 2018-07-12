@@ -20,7 +20,7 @@ RAImagePicker is a protocol-oriented framework that provides custom features fro
   s.source           = { :git => 'https://github.com/rallahaseh/RAImagePicker.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/rallahaseh'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '9.0'
 
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 
