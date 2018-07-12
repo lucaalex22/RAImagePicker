@@ -75,7 +75,7 @@
 
 /* Begin PBXFileReference section */
 		012EAC120AE225A21D9A9938A3791567 /* RARecordButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RARecordButton.swift; sourceTree = "<group>"; };
-		027F013640574045E59659A7ACB8AB44 /* Pods_RAImagePicker_Example_RAImagePicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RAImagePicker_Example_RAImagePicker_Tests.framework; path = "Pods-RAImagePicker_Example-RAImagePicker_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		027F013640574045E59659A7ACB8AB44 /* Pods_RAImagePicker_Example_RAImagePicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RAImagePicker_Example_RAImagePicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		030B5664784C03896834D355DB956444 /* RAImagePickerAssetModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RAImagePickerAssetModel.swift; sourceTree = "<group>"; };
 		071D4162EB57540830699F5554FD4FE9 /* Pods-RAImagePicker_Example-RAImagePicker_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RAImagePicker_Example-RAImagePicker_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0B96F36590B988E3E0CF6C5B9094316A /* Pods-RAImagePicker_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RAImagePicker_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		15B363BD450B0C53E83C65DDF274BC55 /* Pods-RAImagePicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RAImagePicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		15DA3BFD25DBF6D2908BB95DDD8D3451 /* UIImageEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
 		176075875C66A0A89D72E5B3FF3B3AC5 /* RARecordDurationLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RARecordDurationLabel.swift; sourceTree = "<group>"; };
-		1AD14EFB77A4738CA078AE90D6B3BF21 /* Pods-RAImagePicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-RAImagePicker_Example.modulemap"; sourceTree = "<group>"; };
+		1AD14EFB77A4738CA078AE90D6B3BF21 /* Pods-RAImagePicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-RAImagePicker_Example.modulemap"; sourceTree = "<group>"; };
 		2671353A3E3C35DD51ABB306A31C636E /* RAImagePickerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RAImagePickerController.swift; sourceTree = "<group>"; };
 		29F33CF7F4E54DB1884ADE5A3BA13A15 /* RACaptureSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RACaptureSettings.swift; sourceTree = "<group>"; };
 		2A291C286D4F9BA261356D7E8546D631 /* RAImagePickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RAImagePickerView.swift; sourceTree = "<group>"; };
@@ -92,13 +92,13 @@
 		32F118E055E00334BB34C1DAB4BC4BA1 /* Pods-RAImagePicker_Example-RAImagePicker_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RAImagePicker_Example-RAImagePicker_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		333F65A3F2FB15ADF9EA2A760B8CC8D5 /* RAPhotoCaptureDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RAPhotoCaptureDelegate.swift; sourceTree = "<group>"; };
 		3BBA7BCE3C95CAA48625290EF93DD259 /* RAImagePickerLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RAImagePickerLayout.swift; sourceTree = "<group>"; };
-		3D74DBEBDCCE4E603CBAE6B548293D05 /* RAImagePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RAImagePicker.modulemap; sourceTree = "<group>"; };
+		3D74DBEBDCCE4E603CBAE6B548293D05 /* RAImagePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = RAImagePicker.modulemap; sourceTree = "<group>"; };
 		3ED174831868E50CF4F67DCD37F35DB8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3F7CB2B80B83B0832324F975C12C1C13 /* RACaptureSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RACaptureSession.swift; sourceTree = "<group>"; };
 		429030FEF4D09FC6D66CDDEA29DAAD7A /* RAAppearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RAAppearance.swift; sourceTree = "<group>"; };
 		446C59980336A1230F9806B7AE9A1426 /* Pods-RAImagePicker_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RAImagePicker_Example-resources.sh"; sourceTree = "<group>"; };
 		453666E08D6A04BF370C9A5B534C7FBD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		485DF686C05E69048D1B442307CD79E1 /* Pods-RAImagePicker_Example-RAImagePicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-RAImagePicker_Example-RAImagePicker_Tests.modulemap"; sourceTree = "<group>"; };
+		485DF686C05E69048D1B442307CD79E1 /* Pods-RAImagePicker_Example-RAImagePicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-RAImagePicker_Example-RAImagePicker_Tests.modulemap"; sourceTree = "<group>"; };
 		4DBB5BBC60DF5D2CF836D4A95C6103D8 /* Pods-RAImagePicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RAImagePicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5244DF2B503476B1992E923F6AD59725 /* RAImagePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RAImagePicker-umbrella.h"; sourceTree = "<group>"; };
 		5275F41F505A279E75081CAF8D7AF1B3 /* Pods-RAImagePicker_Example-RAImagePicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RAImagePicker_Example-RAImagePicker_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -112,8 +112,8 @@
 		79DC5B03F8E8D2D613046B068125C286 /* RALayoutModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RALayoutModel.swift; sourceTree = "<group>"; };
 		7B5A283E539BACB2EB0EF106189AD0FB /* RACellRegistrator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RACellRegistrator.swift; sourceTree = "<group>"; };
 		7C10FCAD6FBD00D678787453C2EE8488 /* RACameraCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RACameraCollectionViewCell.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94C4DDA0A5C4156EA26FEAA6D9ADC0ED /* RAImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RAImagePicker.framework; path = RAImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94C4DDA0A5C4156EA26FEAA6D9ADC0ED /* RAImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RAImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		972E2347E02B1FF66C9804BD6155078C /* Pods-RAImagePicker_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RAImagePicker_Example-frameworks.sh"; sourceTree = "<group>"; };
 		99CA08E9AB7FC53A18751E2F409DDA28 /* RAShutterButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RAShutterButton.swift; sourceTree = "<group>"; };
 		9CC10939BEC96B535DA9357E1F609500 /* RAImagePickerView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = RAImagePickerView.xib; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		B655C02BBD87D116DE3C76637BE6C121 /* RAStationaryButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RAStationaryButton.swift; sourceTree = "<group>"; };
 		B949100F342147861102E6039FA86E18 /* Pods-RAImagePicker_Example-RAImagePicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RAImagePicker_Example-RAImagePicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BB43A7D9341651CC4594FD4424B81B8B /* Pods-RAImagePicker_Example-RAImagePicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RAImagePicker_Example-RAImagePicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		BE7C10F1FFDFF3613937CE143B27BC5E /* Pods_RAImagePicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RAImagePicker_Example.framework; path = "Pods-RAImagePicker_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE7C10F1FFDFF3613937CE143B27BC5E /* Pods_RAImagePicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RAImagePicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFCEAD3F3DC66640E4E265CF6FF4A007 /* RAActionCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = RAActionCell.xib; sourceTree = "<group>"; };
 		C3612D5AD072F328BB5D94A0D5247801 /* RAActionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RAActionCell.swift; sourceTree = "<group>"; };
 		C4F07649CDCCD1A046FDB63A1673741F /* Pods-RAImagePicker_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RAImagePicker_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -183,7 +183,6 @@
 				D24AA183359CAD126BF5D104E686924D /* RAVideoCaptureDelegate.swift */,
 				FFB9BDBBA54F52F30F1D6055558B61F8 /* RAVideoDataOuptutSampleBufferDelegate.swift */,
 			);
-			name = Video;
 			path = Video;
 			sourceTree = "<group>";
 		};
@@ -200,7 +199,6 @@
 				0C38A7FC678E62C060A90CC5C35805F6 /* RAVideoCameraCell.swift */,
 				F0923F28391F0388D6E5FC5DE6873D50 /* RAVideoCameraCell.xib */,
 			);
-			name = Cells;
 			path = Cells;
 			sourceTree = "<group>";
 		};
@@ -308,7 +306,6 @@
 			children = (
 				333F65A3F2FB15ADF9EA2A760B8CC8D5 /* RAPhotoCaptureDelegate.swift */,
 			);
-			name = Camera;
 			path = Camera;
 			sourceTree = "<group>";
 		};
@@ -320,7 +317,6 @@
 				7B5A283E539BACB2EB0EF106189AD0FB /* RACellRegistrator.swift */,
 				2CBC04E92A258D319BCCF33367723E82 /* RALayoutConfiguration.swift */,
 			);
-			name = Layout;
 			path = Layout;
 			sourceTree = "<group>";
 		};
@@ -623,7 +619,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/RAImagePicker/RAImagePicker-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/RAImagePicker/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/RAImagePicker/RAImagePicker.modulemap";
 				PRODUCT_NAME = RAImagePicker;
@@ -654,7 +650,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-RAImagePicker_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-RAImagePicker_Example/Pods-RAImagePicker_Example.modulemap";
@@ -688,7 +684,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-RAImagePicker_Example-RAImagePicker_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-RAImagePicker_Example-RAImagePicker_Tests/Pods-RAImagePicker_Example-RAImagePicker_Tests.modulemap";
@@ -837,7 +833,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-RAImagePicker_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-RAImagePicker_Example/Pods-RAImagePicker_Example.modulemap";
@@ -871,7 +867,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-RAImagePicker_Example-RAImagePicker_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-RAImagePicker_Example-RAImagePicker_Tests/Pods-RAImagePicker_Example-RAImagePicker_Tests.modulemap";
@@ -906,7 +902,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/RAImagePicker/RAImagePicker-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/RAImagePicker/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/RAImagePicker/RAImagePicker.modulemap";
 				PRODUCT_NAME = RAImagePicker;

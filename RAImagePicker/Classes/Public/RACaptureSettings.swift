@@ -47,15 +47,15 @@ public struct RACaptureSettings {
     }
 }
 
-extension RACaptureSettings.CameraMode {
-    /// transforms user related enum to specific internal capture session enum
-    
-    var captureSessionPresetConfiguration: RACaptureSession.SessionPresetConfiguration {
-        switch self {
-        case .photo: return .photos
-        case .video: return .videos
-        case .photoAndLivePhoto: return .livePhotos
-        case .photoAndVideo: return .videos
-        }
-    }
-}
+//extension RACaptureSettings.CameraMode {
+//    /// transforms user related enum to specific internal capture session enum
+//    
+//    var captureSessionPresetConfiguration: RACaptureSession.SessionPresetConfiguration {
+//        switch self {
+//        case .photo: return .photos
+//        case .video: return .videos
+//        case .photoAndLivePhoto: return .livePhotos
+//        case .photoAndVideo: return .videos
+//        }
+//    }
+//}

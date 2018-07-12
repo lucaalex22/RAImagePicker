@@ -50,16 +50,16 @@ final class RARecordDurationLabel : UILabel {
             return
         }
         
-        secondTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (timer) in
-            self?.backingSeconds += 1
-        })
-        secondTimer?.tolerance = 0.1
-        
-        indicatorTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (timer) in
-            self?.updateIndicator(appearDelay: 0.2)
-        })
-        indicatorTimer?.tolerance = 0.1
-        
+//        secondTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (timer) in
+//            self?.backingSeconds += 1
+//        })
+//        secondTimer?.tolerance = 0.1
+//
+//        indicatorTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (timer) in
+//            self?.updateIndicator(appearDelay: 0.2)
+//        })
+//        indicatorTimer?.tolerance = 0.1
+
         updateIndicator(appearDelay: 0)
     }
     

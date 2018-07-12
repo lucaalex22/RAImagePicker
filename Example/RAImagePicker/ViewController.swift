@@ -299,10 +299,10 @@ extension ViewController : RAImagePickerControllerDelegate {
     {
         switch cell {
         case let photosCell as GalleryViewCell:
-            if asset.mediaSubtypes.contains(.photoLive) {
-                photosCell.subtypeImageView.image = #imageLiteral(resourceName: "live")
-            }
-            else if asset.mediaSubtypes.contains(.photoPanorama) {
+//            if asset.mediaSubtypes.contains(.photoLive) {
+//                photosCell.subtypeImageView.image = #imageLiteral(resourceName: "live")
+//            }
+            if asset.mediaSubtypes.contains(.photoPanorama) {
                 photosCell.subtypeImageView.image = #imageLiteral(resourceName: "panorama")
             }
             else if #available(iOS 10.2, *), asset.mediaSubtypes.contains(.photoDepthEffect) {

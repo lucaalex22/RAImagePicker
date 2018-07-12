@@ -55,7 +55,7 @@ open class RAImagePickerController : UIViewController {
     
     deinit {
         PHPhotoLibrary.shared().unregisterChangeObserver(self)
-        captureSession?.suspend()
+//        captureSession?.suspend()
     }
     
     // MARK: - Public APIs
@@ -149,8 +149,8 @@ open class RAImagePickerController : UIViewController {
     }
     fileprivate var collectionViewDataSource    = RAImagePickerDataSource(assetsModel: RAImagePickerAssetModel())
     fileprivate var collectionViewDelegate      = RAImagePickerDelegate()
-    fileprivate var captureSession: RACaptureSession?
-    
+//    fileprivate var captureSession: RACaptureSession?
+
     private func updateItemSize() {
         
         guard let layout = self.collectionViewDelegate.layout else {
@@ -264,14 +264,14 @@ open class RAImagePickerController : UIViewController {
         
         // Configure RACaptureSession
         if layoutConfiguration.showsCameraItem {
-            let session = RACaptureSession()
-            captureSession = session
-            session.presetConfiguration = captureSettings.cameraMode.captureSessionPresetConfiguration
-            session.videoOrientation = UIApplication.shared.statusBarOrientation.captureVideoOrientation
-            session.delegate = self
-            session.videoRecordingDelegate = self
-            session.photoCapturingDelegate = self
-            session.prepare()
+//            let session = RACaptureSession()
+//            captureSession = session
+//            session.presetConfiguration = captureSettings.cameraMode.captureSessionPresetConfiguration
+//            session.videoOrientation = UIApplication.shared.statusBarOrientation.captureVideoOrientation
+//            session.delegate = self
+//            session.videoRecordingDelegate = self
+//            session.photoCapturingDelegate = self
+//            session.prepare()
         }
         
     }
@@ -293,8 +293,8 @@ open class RAImagePickerController : UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
         
         // Update RACaptureSession with new interface orientation
-        captureSession?.updateVideoOrientation(new: UIApplication.shared.statusBarOrientation.captureVideoOrientation)
-        
+//        captureSession?.updateVideoOrientation(new: UIApplication.shared.statusBarOrientation.captureVideoOrientation)
+
         coordinator.animate(alongsideTransition: { (context) in
             self.updateContentInset()
         }) { (context) in
@@ -305,17 +305,17 @@ open class RAImagePickerController : UIViewController {
     
     // MARK: - Private Methods
     @objc private func tapGestureRecognized(sender: UIGestureRecognizer) {
-        
-        guard sender.state == .ended else {
-            return
-        }
-        guard let cameraCell = collectionView.cameraCell(layout: layoutConfiguration) else {
-            return
-        }
-        let point = sender.location(in: cameraCell)
-        if cameraCell.touchIsCaptureEffective(point: point) {
-            takePicture()
-        }
+//
+//        guard sender.state == .ended else {
+//            return
+//        }
+//        guard let cameraCell = collectionView.cameraCell(layout: layoutConfiguration) else {
+//            return
+//        }
+//        let point = sender.location(in: cameraCell)
+//        if cameraCell.touchIsCaptureEffective(point: point) {
+//            takePicture()
+//        }
     }
 }
 
@@ -403,70 +403,70 @@ extension RAImagePickerController : ImagePickerDelegate {
     }
     
     func imagePicker(delegate: RAImagePickerDelegate, willDisplayCameraCell cell: RACameraCollectionViewCell) {
-        if cell.delegate == nil {
-            cell.delegate = self
-            cell.previewView.session = captureSession?.session
-            captureSession?.previewLayer = cell.previewView.previewLayer
-            /*
-                Using videos preset means using different technique for blurring the cell content
-                isVisualEffectViewUsedForBlurring = true, then UIVisualEffectView is used for blurring
-                isVisualEffectViewUsedForBlurring = false, then manually blur video data output frame
-             */
-            if let config = captureSession?.presetConfiguration, config == .videos {
-                cell.isVisualEffectViewUsedForBlurring = true
-            }
-            
-        }
-        // Default cell RALivePhotoCameraCell, Update Based on Camera Config
-        if let liveCameraCell = cell as? RALivePhotoCameraCell {
-            liveCameraCell.updateWithCameraMode(captureSettings.cameraMode)
-        }
-        
-        // Update Live Photos
-        let inProgressLivePhotos = captureSession?.inProgressLivePhotoCapturesCount ?? 0
-        cell.updateLivePhotoStatus(isProcessing: inProgressLivePhotos > 0, shouldAnimate: false)
-        
-        // Update Video Recording Status
-        let isRecordingVideo = captureSession?.isRecordingVideo ?? false
-        cell.updateRecordingVideoStatus(isRecording: isRecordingVideo, shouldAnimate: false)
-        
-        // Update Authorization Status
-        let status = AVCaptureDevice.authorizationStatus(for: .video)
-        if cell.authorizationStatus != status {
-            cell.authorizationStatus = status
-        }
-        
-        // Resume Session [Only if not recording video]
-        if isRecordingVideo == false {
-            captureSession?.resume()
-        }
+//        if cell.delegate == nil {
+//            cell.delegate = self
+//            cell.previewView.session = captureSession?.session
+//            captureSession?.previewLayer = cell.previewView.previewLayer
+//            /*
+//                Using videos preset means using different technique for blurring the cell content
+//                isVisualEffectViewUsedForBlurring = true, then UIVisualEffectView is used for blurring
+//                isVisualEffectViewUsedForBlurring = false, then manually blur video data output frame
+//             */
+//            if let config = captureSession?.presetConfiguration, config == .videos {
+//                cell.isVisualEffectViewUsedForBlurring = true
+//            }
+//
+//        }
+//        // Default cell RALivePhotoCameraCell, Update Based on Camera Config
+//        if let liveCameraCell = cell as? RALivePhotoCameraCell {
+//            liveCameraCell.updateWithCameraMode(captureSettings.cameraMode)
+//        }
+//
+//        // Update Live Photos
+//        let inProgressLivePhotos = captureSession?.inProgressLivePhotoCapturesCount ?? 0
+//        cell.updateLivePhotoStatus(isProcessing: inProgressLivePhotos > 0, shouldAnimate: false)
+//
+//        // Update Video Recording Status
+//        let isRecordingVideo = captureSession?.isRecordingVideo ?? false
+//        cell.updateRecordingVideoStatus(isRecording: isRecordingVideo, shouldAnimate: false)
+//
+//        // Update Authorization Status
+//        let status = AVCaptureDevice.authorizationStatus(for: .video)
+//        if cell.authorizationStatus != status {
+//            cell.authorizationStatus = status
+//        }
+//
+//        // Resume Session [Only if not recording video]
+//        if isRecordingVideo == false {
+//            captureSession?.resume()
+//        }
     }
     
     func imagePicker(delegate: RAImagePickerDelegate, didEndDisplayingCameraCell cell: RACameraCollectionViewCell)
     {
         
-        let isRecordingVideo = captureSession?.isRecordingVideo ?? false
-        // Suspend Session [Only if not recording video]
-        // Otherwise the Recording Would be Stopped.
-        if isRecordingVideo == false {
-            captureSession?.suspend()
-            
-            // Blur Cell ASAP[as soon as possible]
-            DispatchQueue.global(qos: .userInteractive).async {
-                if let image = self.captureSession?.latestVideoBufferImage {
-                    // Add UIImageEffects Library if needed
-                    let blurred = UIImageEffects.imageByApplyingLightEffect(to: image)
-                    DispatchQueue.main.async {
-                        cell.blurEffect(blurImage: blurred, animated: false, completion: nil)
-                    }
-                }
-                else {
-                    DispatchQueue.main.async {
-                        cell.blurEffect(blurImage: nil, animated: false, completion: nil)
-                    }
-                }
-            }
-        }
+//        let isRecordingVideo = captureSession?.isRecordingVideo ?? false
+//        // Suspend Session [Only if not recording video]
+//        // Otherwise the Recording Would be Stopped.
+//        if isRecordingVideo == false {
+//            captureSession?.suspend()
+//            
+//            // Blur Cell ASAP[as soon as possible]
+//            DispatchQueue.global(qos: .userInteractive).async {
+//                if let image = self.captureSession?.latestVideoBufferImage {
+//                    // Add UIImageEffects Library if needed
+//                    let blurred = UIImageEffects.imageByApplyingLightEffect(to: image)
+//                    DispatchQueue.main.async {
+//                        cell.blurEffect(blurImage: blurred, animated: false, completion: nil)
+//                    }
+//                }
+//                else {
+//                    DispatchQueue.main.async {
+//                        cell.blurEffect(blurImage: nil, animated: false, completion: nil)
+//                    }
+//                }
+//            }
+//        }
     }
     
     func imagePicker(delegate: RAImagePickerDelegate, didScroll scrollView: UIScrollView) {
@@ -476,180 +476,180 @@ extension RAImagePickerController : ImagePickerDelegate {
 }
 
 // MARK: - Controller && RACaptureSessionDelegate Extension
-extension RAImagePickerController : RACaptureSessionDelegate {
-    
-    func captureSessionDidResume(_ session: RACaptureSession) {
-        debugPrint("CaptureSession: Did Resume")
-        unblurCell(animated: true)
-    }
-    
-    func captureSessionDidSuspend(_ session: RACaptureSession) {
-        debugPrint("CaptureSession: Did Suspend")
-        blurCell(animated: true)
-    }
-    
-    func captureSession(_ session: RACaptureSession, didFail error: AVError) {
-        debugPrint("CaptureSession: Did Fail")
-    }
-    
-    func captureSessionDidFailConfiguringSession(_ session: RACaptureSession) {
-        debugPrint("CaptureSession: Did Fail Configuring")
-    }
-    
-    func captureSession(_ session: RACaptureSession, authorizationStatusFailed status: AVAuthorizationStatus) {
-        debugPrint("CaptureSession: Did Fail Get Camera Authorization")
-        reloadCameraCell(basedOnAuthorizationStatus: status)
-    }
-    
-    func captureSession(_ session: RACaptureSession, authorizationStatusGranted status: AVAuthorizationStatus) {
-        debugPrint("CaptureSession: Did Grant Camera Authorization")
-        reloadCameraCell(basedOnAuthorizationStatus: status)
-    }
-    
-    func captureSession(_ session: RACaptureSession, wasInterrupted reason: AVCaptureSession.InterruptionReason) {
-        debugPrint("CaptureSession: Interrupted")
-    }
-    
-    func captureSessionInterruptionDidEnd(_ session: RACaptureSession) {
-        debugPrint("CaptureSession: Interruption Ended")
-    }
-    
-    private func blurCell(animated: Bool) {
-        
-        guard let cameraCell = collectionView.cameraCell(layout: layoutConfiguration) else { return }
-        guard let captureSession = captureSession else { return }
-        cameraCell.blurEffect(blurImage: captureSession.latestVideoBufferImage, animated: animated, completion: nil)
-    }
-    
-    private func unblurCell(animated: Bool) {
-        
-        guard let cameraCell = collectionView.cameraCell(layout: layoutConfiguration) else {
-            return
-        }
-        
-        cameraCell.unblurEffect(unblurImage: nil, animated: animated, completion: nil)
-    }
-}
+//extension RAImagePickerController : RACaptureSessionDelegate {
+//
+//    func captureSessionDidResume(_ session: RACaptureSession) {
+//        debugPrint("CaptureSession: Did Resume")
+//        unblurCell(animated: true)
+//    }
+//
+//    func captureSessionDidSuspend(_ session: RACaptureSession) {
+//        debugPrint("CaptureSession: Did Suspend")
+//        blurCell(animated: true)
+//    }
+//
+//    func captureSession(_ session: RACaptureSession, didFail error: AVError) {
+//        debugPrint("CaptureSession: Did Fail")
+//    }
+//
+//    func captureSessionDidFailConfiguringSession(_ session: RACaptureSession) {
+//        debugPrint("CaptureSession: Did Fail Configuring")
+//    }
+//
+//    func captureSession(_ session: RACaptureSession, authorizationStatusFailed status: AVAuthorizationStatus) {
+//        debugPrint("CaptureSession: Did Fail Get Camera Authorization")
+//        reloadCameraCell(basedOnAuthorizationStatus: status)
+//    }
+//
+//    func captureSession(_ session: RACaptureSession, authorizationStatusGranted status: AVAuthorizationStatus) {
+//        debugPrint("CaptureSession: Did Grant Camera Authorization")
+//        reloadCameraCell(basedOnAuthorizationStatus: status)
+//    }
+//
+//    func captureSession(_ session: RACaptureSession, wasInterrupted reason: AVCaptureSession.InterruptionReason) {
+//        debugPrint("CaptureSession: Interrupted")
+//    }
+//
+//    func captureSessionInterruptionDidEnd(_ session: RACaptureSession) {
+//        debugPrint("CaptureSession: Interruption Ended")
+//    }
+//
+//    private func blurCell(animated: Bool) {
+//
+//        guard let cameraCell = collectionView.cameraCell(layout: layoutConfiguration) else { return }
+//        guard let captureSession = captureSession else { return }
+//        cameraCell.blurEffect(blurImage: captureSession.latestVideoBufferImage, animated: animated, completion: nil)
+//    }
+//
+//    private func unblurCell(animated: Bool) {
+//
+//        guard let cameraCell = collectionView.cameraCell(layout: layoutConfiguration) else {
+//            return
+//        }
+//
+//        cameraCell.unblurEffect(unblurImage: nil, animated: animated, completion: nil)
+//    }
+//}
 
 // MARK: - Controller && RACaptureSessionPhotoCapturingDelegate Extension
-extension RAImagePickerController : RACaptureSessionPhotoCapturingDelegate {
-    
-    func captureSession(_ session: RACaptureSession, didCapturePhotoData: Data, with settings: AVCapturePhotoSettings) {
-        debugPrint("Photo CaptureSession: Did Capture Photo - \(settings.uniqueID)")
-        delegate?.imagePicker(controller: self, didTake: UIImage(data: didCapturePhotoData)!)
-    }
-    
-    func captureSession(_ session: RACaptureSession, willCapturePhotoWith settings: AVCapturePhotoSettings) {
-        debugPrint("Photo CaptureSession: Will Capture Photo - \(settings.uniqueID)")
-    }
-    
-    func captureSession(_ session: RACaptureSession, didFailCapturingPhotoWith error: Error) {
-        debugPrint("Photo CaptureSession: Did Fail Capturing - \(error)")
-
-    }
-    
-    func captureSessionDidChangeNumberOfProcessingLivePhotos(_ session: RACaptureSession) {
-        
-        guard let cameraCell = collectionView.cameraCell(layout: layoutConfiguration) else {
-            return
-        }
-        let count = session.inProgressLivePhotoCapturesCount
-        cameraCell.updateLivePhotoStatus(isProcessing: count > 0, shouldAnimate: true)
-    }
-}
-
-// MARK: - Controller && RACaptureSessionVideoRecordingDelegate Extension
-extension RAImagePickerController : RACaptureSessionVideoRecordingDelegate {
-    
-    func captureSessionDidBecomeReadyForVideoRecording(_ session: RACaptureSession) {
-        debugPrint("Video CaptureSession: Ready for Recording Video")
-        guard let cameraCell = collectionView.cameraCell(layout: layoutConfiguration) else { return }
-        cameraCell.videoRecodingDidBecomeReady()
-    }
-    
-    func captureSessionDidStartVideoRecording(_ session: RACaptureSession) {
-        debugPrint("Video CaptureSession: Did Start Recording Video")
-        updateCameraCellRecordingStatusIfNeeded(isRecording: true, animated: true)
-    }
-    
-    func captureSessionDidCancelVideoRecording(_ session: RACaptureSession) {
-        debugPrint("Video CaptureSession: Did Cancel Recording Video")
-        updateCameraCellRecordingStatusIfNeeded(isRecording: false, animated: true)
-    }
-    
-    func captureSessionDid(_ session: RACaptureSession, didFinishVideoRecording videoURL: URL) {
-        debugPrint("Video CaptureSession: Did Finish Recording Video")
-        updateCameraCellRecordingStatusIfNeeded(isRecording: false, animated: true)
-    }
-    
-    func captureSessionDid(_ session: RACaptureSession, didInterruptVideoRecording videoURL: URL, reason: Error) {
-        debugPrint("Video CaptureSession: Recording Video Has Been Interrupted Due - \(reason)")
-        updateCameraCellRecordingStatusIfNeeded(isRecording: false, animated: true)
-    }
-    
-    func captureSessionDid(_ session: RACaptureSession, didFailVideoRecording error: Error) {
-        debugPrint("Video CaptureSession: Did Fail Recording Video")
-        updateCameraCellRecordingStatusIfNeeded(isRecording: false, animated: true)
-    }
-    
-    private func updateCameraCellRecordingStatusIfNeeded(isRecording: Bool, animated: Bool) {
-        guard let cameraCell = collectionView.cameraCell(layout: layoutConfiguration) else { return }
-        cameraCell.updateRecordingVideoStatus(isRecording: isRecording, shouldAnimate: animated)
-    }
-}
-
-// MARK: - Controller && RACameraCollectionViewCellDelegate Extension
-extension RAImagePickerController: RACameraCollectionViewCellDelegate {
-    
-    func takePicture() {
-        captureSession?.capturePhoto(livePhotoMode: .off, saveToPhotoLibrary: captureSettings.savesCapturedPhotosToPhotoLibrary)
-    }
-    
-    func takeLivePhoto() {
-        captureSession?.capturePhoto(livePhotoMode: .on, saveToPhotoLibrary: captureSettings.savesCapturedLivePhotosToPhotoLibrary)
-    }
-    
-    func startVideoRecording() {
-        captureSession?.startVideoRecording(saveToPhotoLibrary: captureSettings.savesCapturedVideosToPhotoLibrary)
-    }
-    
-    func stopVideoRecording() {
-        captureSession?.stopVideoRecording(cancel: false)
-    }
-    
-    func flipCamera(_ completion: (() -> Void)? = nil) {
-        
-        guard let captureSession = captureSession else { return  }
-        
-        guard let cameraCell = collectionView.cameraCell(layout: layoutConfiguration) else {
-            return captureSession.changeCamera(completion: completion)
-        }
-        
-        // Add UIImageEffects Library if needed
-        var image = captureSession.latestVideoBufferImage
-        if image != nil {
-            image = UIImageEffects.imageByApplyingLightEffect(to: image!)
-        }
-        // 1. Blur
-        cameraCell.blurEffect(blurImage: image, animated: true) { _ in
-            // 2. Flip Camera
-            captureSession.changeCamera(completion: {
-                // 3. Flip Animation
-                UIView.transition(with: cameraCell.previewView, duration: 0.25, options: [.transitionFlipFromLeft, .allowAnimatedContent], animations: nil) { (finished) in
-                    // 4. Set New Image from Buffer
-                    var image = captureSession.latestVideoBufferImage
-                    if image != nil {
-                        image = UIImageEffects.imageByApplyingLightEffect(to: image!)
-                    }
-                    // 5. Unblur
-                    cameraCell.unblurEffect(unblurImage: image, animated: true, completion: { _ in
-                        completion?()
-                    })
-                }
-            })
-        }
-    }
-}
+//extension RAImagePickerController : RACaptureSessionPhotoCapturingDelegate {
+//    
+//    func captureSession(_ session: RACaptureSession, didCapturePhotoData: Data, with settings: AVCapturePhotoSettings) {
+//        debugPrint("Photo CaptureSession: Did Capture Photo - \(settings.uniqueID)")
+//        delegate?.imagePicker(controller: self, didTake: UIImage(data: didCapturePhotoData)!)
+//    }
+//    
+//    func captureSession(_ session: RACaptureSession, willCapturePhotoWith settings: AVCapturePhotoSettings) {
+//        debugPrint("Photo CaptureSession: Will Capture Photo - \(settings.uniqueID)")
+//    }
+//    
+//    func captureSession(_ session: RACaptureSession, didFailCapturingPhotoWith error: Error) {
+//        debugPrint("Photo CaptureSession: Did Fail Capturing - \(error)")
+//
+//    }
+//    
+//    func captureSessionDidChangeNumberOfProcessingLivePhotos(_ session: RACaptureSession) {
+//        
+//        guard let cameraCell = collectionView.cameraCell(layout: layoutConfiguration) else {
+//            return
+//        }
+//        let count = session.inProgressLivePhotoCapturesCount
+//        cameraCell.updateLivePhotoStatus(isProcessing: count > 0, shouldAnimate: true)
+//    }
+//}
+//
+//// MARK: - Controller && RACaptureSessionVideoRecordingDelegate Extension
+//extension RAImagePickerController : RACaptureSessionVideoRecordingDelegate {
+//    
+//    func captureSessionDidBecomeReadyForVideoRecording(_ session: RACaptureSession) {
+//        debugPrint("Video CaptureSession: Ready for Recording Video")
+//        guard let cameraCell = collectionView.cameraCell(layout: layoutConfiguration) else { return }
+//        cameraCell.videoRecodingDidBecomeReady()
+//    }
+//    
+//    func captureSessionDidStartVideoRecording(_ session: RACaptureSession) {
+//        debugPrint("Video CaptureSession: Did Start Recording Video")
+//        updateCameraCellRecordingStatusIfNeeded(isRecording: true, animated: true)
+//    }
+//    
+//    func captureSessionDidCancelVideoRecording(_ session: RACaptureSession) {
+//        debugPrint("Video CaptureSession: Did Cancel Recording Video")
+//        updateCameraCellRecordingStatusIfNeeded(isRecording: false, animated: true)
+//    }
+//    
+//    func captureSessionDid(_ session: RACaptureSession, didFinishVideoRecording videoURL: URL) {
+//        debugPrint("Video CaptureSession: Did Finish Recording Video")
+//        updateCameraCellRecordingStatusIfNeeded(isRecording: false, animated: true)
+//    }
+//    
+//    func captureSessionDid(_ session: RACaptureSession, didInterruptVideoRecording videoURL: URL, reason: Error) {
+//        debugPrint("Video CaptureSession: Recording Video Has Been Interrupted Due - \(reason)")
+//        updateCameraCellRecordingStatusIfNeeded(isRecording: false, animated: true)
+//    }
+//    
+//    func captureSessionDid(_ session: RACaptureSession, didFailVideoRecording error: Error) {
+//        debugPrint("Video CaptureSession: Did Fail Recording Video")
+//        updateCameraCellRecordingStatusIfNeeded(isRecording: false, animated: true)
+//    }
+//    
+//    private func updateCameraCellRecordingStatusIfNeeded(isRecording: Bool, animated: Bool) {
+//        guard let cameraCell = collectionView.cameraCell(layout: layoutConfiguration) else { return }
+//        cameraCell.updateRecordingVideoStatus(isRecording: isRecording, shouldAnimate: animated)
+//    }
+//}
+//
+//// MARK: - Controller && RACameraCollectionViewCellDelegate Extension
+//extension RAImagePickerController: RACameraCollectionViewCellDelegate {
+//    
+//    func takePicture() {
+//        captureSession?.capturePhoto(livePhotoMode: .off, saveToPhotoLibrary: captureSettings.savesCapturedPhotosToPhotoLibrary)
+//    }
+//    
+//    func takeLivePhoto() {
+//        captureSession?.capturePhoto(livePhotoMode: .on, saveToPhotoLibrary: captureSettings.savesCapturedLivePhotosToPhotoLibrary)
+//    }
+//    
+//    func startVideoRecording() {
+//        captureSession?.startVideoRecording(saveToPhotoLibrary: captureSettings.savesCapturedVideosToPhotoLibrary)
+//    }
+//    
+//    func stopVideoRecording() {
+//        captureSession?.stopVideoRecording(cancel: false)
+//    }
+//    
+//    func flipCamera(_ completion: (() -> Void)? = nil) {
+//        
+//        guard let captureSession = captureSession else { return  }
+//        
+//        guard let cameraCell = collectionView.cameraCell(layout: layoutConfiguration) else {
+//            return captureSession.changeCamera(completion: completion)
+//        }
+//        
+//        // Add UIImageEffects Library if needed
+//        var image = captureSession.latestVideoBufferImage
+//        if image != nil {
+//            image = UIImageEffects.imageByApplyingLightEffect(to: image!)
+//        }
+//        // 1. Blur
+//        cameraCell.blurEffect(blurImage: image, animated: true) { _ in
+//            // 2. Flip Camera
+//            captureSession.changeCamera(completion: {
+//                // 3. Flip Animation
+//                UIView.transition(with: cameraCell.previewView, duration: 0.25, options: [.transitionFlipFromLeft, .allowAnimatedContent], animations: nil) { (finished) in
+//                    // 4. Set New Image from Buffer
+//                    var image = captureSession.latestVideoBufferImage
+//                    if image != nil {
+//                        image = UIImageEffects.imageByApplyingLightEffect(to: image!)
+//                    }
+//                    // 5. Unblur
+//                    cameraCell.unblurEffect(unblurImage: image, animated: true, completion: { _ in
+//                        completion?()
+//                    })
+//                }
+//            })
+//        }
+//    }
+//}
 
 
 
