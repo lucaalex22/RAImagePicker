@@ -26,6 +26,7 @@ final class RAImagePickerAssetModel {
     private lazy var defaultFetchResult: PHFetchResult<PHAsset> = {
         
         let assetsOptions = PHFetchOptions()
+        assetsOptions.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
         assetsOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         assetsOptions.fetchLimit = 30
         
