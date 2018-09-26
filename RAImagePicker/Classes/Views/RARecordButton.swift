@@ -45,13 +45,13 @@ class RARecordButton : RAStationaryButton {
     private var outerCircleLayer: CALayer
     private var innerCircleLayer: CALayer
     
-    private enum State: String {
+    private enum LayerState: String {
         case initial
         case pressed
         case recording
     }
     
-    private var layersState: State = .initial
+    private var layersState: LayerState = .initial
     
     required init?(coder aDecoder: NSCoder) {
         outerCircleLayer = CALayer()
@@ -89,7 +89,7 @@ class RARecordButton : RAStationaryButton {
         setNeedsLayout()
     }
     
-    private func updateCircleLayers(state: State, animated: Bool) {
+    private func updateCircleLayers(state: LayerState, animated: Bool) {
         guard layersState != state else { return }
         
         layersState = state
